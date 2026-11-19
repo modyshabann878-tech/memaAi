@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <meta name="google-site-verification" content="ضع_الكود_هنا"> -->
+<title>اعمل ريلزك: ريلز جاهزة من فيديو يوتيوب</title>
+<meta name="description" content="الصق نص فيديو يوتيوب، واطلع في ثوانٍ بريلز مختلف لكل منصة: فيسبوك وتيك توك وإنستجرام ويوتيوب شورتس.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14213d;--ink2:#46526b;--bg:#eef2f6;--card:#fff;--line:#d5dce6;--acc:#ffc93c;--ok:#1f9d6b;--r:14px;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"IBM Plex Sans Arabic",Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;font-size:17px}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-weight:700;font-size:19px;text-decoration:none}
+nav a{margin-inline-start:18px;text-decoration:none;color:var(--ink2);font-size:15px}
+nav a:hover{color:var(--ink)}
+.hero{padding:34px 0 20px;max-width:760px}
+h1{font-size:clamp(30px,6vw,50px);line-height:1.35;margin:0 0 14px;font-weight:700}
+.lead{color:var(--ink2);font-size:19px;margin:0 0 26px}
+.tool{background:var(--card);border:2px solid var(--ink);border-radius:var(--r);padding:20px;box-shadow:6px 6px 0 var(--ink)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+input[type=url],select{font:inherit;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+input[type=url]{flex:1 1 260px;direction:ltr;text-align:left}
+button{font:inherit;cursor:pointer;border:0;border-radius:10px;padding:13px 22px;background:var(--acc);color:var(--ink);font-weight:700}
+button:hover{filter:brightness(.96)}
+button:disabled{opacity:.6;cursor:wait}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.hint{font-size:14px;color:var(--ink2);margin:10px 0 0}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:18px 0 0;border-bottom:1.5px solid var(--line)}
+.tab{background:none;border-radius:10px 10px 0 0;padding:9px 14px;font-weight:500;color:var(--ink2)}
+.tab[aria-selected=true]{background:var(--ink);color:#fff}
+#out{display:none}
+#src{min-height:130px;margin:0 0 10px}
+button.ghost{background:#fff;border:1.5px solid var(--ink)}
+.code{margin-top:14px;align-items:center}
+.code input{flex:1 1 180px;font:inherit;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;text-transform:uppercase}
+.code .hint{margin:0}
+textarea{width:100%;min-height:220px;margin-top:12px;font:inherit;padding:14px;border:1.5px solid var(--line);border-radius:10px;resize:vertical;line-height:1.9;color:var(--ink)}
+.bar{display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap}
+.bar .ghost{background:#fff;border:1.5px solid var(--ink)}
+.tag{font-size:13px;background:#fff4cf;border:1px solid #e8c95a;border-radius:8px;padding:2px 10px}
+#msg{color:var(--ok);font-size:14px}
+.err{color:#b3261e}
+section{padding:56px 0 0}
+h2{font-size:clamp(24px,4vw,32px);margin:0 0 8px}
+.sub{color:var(--ink2);margin:0 0 24px;max-width:620px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;counter-reset:s;padding:0;list-style:none}
+.steps li{counter-increment:s;background:var(--card);border-radius:var(--r);padding:18px;border:1.5px solid var(--line)}
+.steps li::before{content:counter(s);display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;margin-bottom:8px}
+.steps b{display:block}
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 36px}
+.trust div{padding:14px 0;border-top:1.5px solid var(--ink)}
+.trust b{display:block;margin-bottom:2px}
+.trust span{color:var(--ink2);font-size:16px}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;align-items:stretch}
+.plan{background:var(--card);border:1.5px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column}
+.plan.pop{border:2px solid var(--ink);box-shadow:5px 5px 0 var(--acc)}
+.plan h3{margin:0}
+.price{font-size:34px;font-weight:700;margin:6px 0}
+.price small{font-size:15px;font-weight:400;color:var(--ink2)}
+.plan ul{padding-inline-start:20px;margin:8px 0 20px;color:var(--ink2);flex:1}
+.plan a{text-align:center;text-decoration:none;background:var(--acc);padding:11px;border-radius:10px;font-weight:700}
+.plan:not(.pop) a{background:#fff;border:1.5px solid var(--ink)}
+.pay{font-size:14px;color:var(--ink2);margin-top:14px}
+.box{background:var(--card);border:1.5px solid var(--line);border-radius:var(--r);padding:22px;max-width:760px}
+.box h3{margin:0 0 6px}
+.box ul{margin:6px 0 0;padding-inline-start:20px}
+.ph{background:#fff4cf;padding:0 6px;border-radius:6px}
+details{border-top:1.5px solid var(--line);padding:12px 0}
+summary{cursor:pointer;font-weight:500}
+details p{margin:8px 0 0;color:var(--ink2)}
+footer{margin-top:64px;padding:26px 0 40px;border-top:1.5px solid var(--line);color:var(--ink2);font-size:14px}
+footer a{margin-inline-end:16px}
+.brand{display:flex;align-items:center;gap:10px}
+#me{width:42px;height:42px;padding:0;border-radius:50%;border:2px solid var(--ink);overflow:hidden;display:grid;place-items:center;background:var(--acc);font-size:20px}
+#me img{width:100%;height:100%;object-fit:cover;display:block}
+#adm{position:fixed;inset:0;background:rgba(20,33,61,.65);z-index:50;overflow:auto;padding:14px}
+.adm-in{background:#fff;max-width:720px;margin:0 auto;border-radius:14px;padding:18px}
+.adm-in h3,.adm-in h4{margin:18px 0 4px}
+.adm-in label{display:block;margin:10px 0 2px;font-size:14px;color:var(--ink2)}
+.adm-in input,.adm-in textarea{width:100%;font:inherit;padding:9px;border:1.5px solid var(--line);border-radius:8px;min-height:0;margin:0}
+.adm-in textarea{min-height:80px}
+.adm-in input[type=checkbox]{width:auto;margin-inline-end:6px}
+.adm-in button{margin:10px 0 0;margin-inline-end:8px}
+.adm-card{border:1.5px solid var(--line);border-radius:10px;padding:4px 12px 12px;margin:10px 0}
+.adm-in pre{direction:ltr;text-align:left;white-space:pre-wrap;font-size:13px}
+#waFloat{position:fixed;inset-inline-start:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;background:#25d366;color:#0b2e1a;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:999px;box-shadow:0 3px 10px rgba(0,0,0,.25);font-size:15px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand"><button id="me" aria-label="صورة صاحب الموقع"><img src="me.jpg" alt="" onerror="this.parentNode.textContent='👤'"></button><a class="logo" href="#">اعمل ريلزك</a></div>
+  <nav><a href="#how">إزاي بيشتغل</a><a href="#pricing">الأسعار</a><a href="#refund">الاسترجاع</a><a href="#about">مين ورا الموقع</a></nav>
+</header>
+
+<main>
+<div class="hero">
+  <h1 id="hTitle">اعمل ريلزك من فيديو يوتيوب في ثوانٍ.</h1>
+  <p class="lead" id="hLead">الصق كلام فيديوك، وتطلع لك ريلز مختلف لكل منصة: فيسبوك وتيك توك وإنستجرام ويوتيوب شورتس، بسكريبت وكابشن وهاشتاجات.</p>
+</div>
+
+<div class="tool" id="try">
+  <textarea id="src" placeholder="الصق هنا نص الفيديو. على يوتيوب: افتح الفيديو، اضغط على الوصف، ثم Show transcript، وانسخ النص." aria-label="نص الفيديو"></textarea>
+  <div class="row">
+    <input id="url" type="url" placeholder="لينك الفيديو (اختياري)" aria-label="رابط فيديو يوتيوب" dir="ltr">
+    <select id="tone" aria-label="نبرة الكتابة">
+      <option value="friendly">نبرة ودودة</option>
+      <option value="professional">نبرة رسمية</option>
+      <option value="excited">نبرة حماسية</option>
+      <option value="funny">نبرة ساخرة</option>
+    </select>
+    <button id="go">اعمل الريلز</button>
+  </div>
+  <p class="hint" id="hint"></p>
+  <div class="row code"><input id="code" type="text" placeholder="عندك كود تفعيل؟" aria-label="كود التفعيل" dir="ltr" autocomplete="off"><button id="saveCode" class="ghost">فعّل</button><span id="codeMsg" class="hint"></span></div>
+  <div id="out">
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <textarea id="text" aria-label="النتيجة، ينفع تعدلها قبل النسخ"></textarea>
+    <div class="bar">
+      <button id="copy">انسخ النص</button>
+      <button id="again" class="ghost">أعد الكتابة</button>
+      <span id="demoTag" class="tag" hidden>نتيجة تجريبية</span>
+      <span id="msg" role="status"></span>
+    </div>
+  </div>
+</div>
+
+<section id="how">
+  <h2>إزاي بيشتغل</h2>
+  <p class="sub">ثلاث خطوات من غير ما تكتب حاجة من الأول.</p>
+  <ol class="steps">
+    <li><b>الصق النص</b>انسخ نص الفيديو من يوتيوب (Show transcript) والصقه. لينك الفيديو اختياري.</li>
+    <li><b>اختار النبرة</b>ودود أو رسمي أو حماسي أو ساخر، بالعربي المصري أو الفصحى أو الإنجليزي.</li>
+    <li><b>عدّل وانسخ</b>النتيجة قدامك تعدلها مباشرة، وبعدين تنسخها وتنشرها.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>إيه اللي بتاخده</h2>
+  <p class="sub">ريلز مختلف لكل منصة، مش نفس النص متكرر. وكل واحد بيحدد لك الجزء المقترح من الفيديو عشان تقصّه.</p>
+  <div class="trust">
+    <div><b>فيسبوك ريلز</b><span>سكريبت أطول بأسلوب قصصي، وكابشن بيفتح نقاش.</span></div>
+    <div><b>تيك توك</b><span>إيقاع سريع وهوك في أول 3 ثواني وهاشتاجات.</span></div>
+    <div><b>إنستجرام ريلز</b><span>سكريبت مصقول وكابشن بيشجع على الحفظ والمشاركة.</span></div>
+    <div><b>يوتيوب شورتس</b><span>أقل من 60 ثانية، وعنوان وخاتمة بترجّع المشاهد للبداية.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>ليه تثق فيه</h2>
+  <div class="trust">
+    <div><b>الكلام من فيديوك أنت</b><span>مش بنضيف معلومات من برا الفيديو، وبتراجع كل حاجة قبل ما تنشر.</span></div>
+    <div><b>خصوصية واضحة</b><span>النص بيتعالج بخدمة ذكاء اصطناعي من Google لتوليد النتيجة، ومبنخزنوش عندنا.</span></div>
+    <div><b>من غير ربط حسابات</b><span>مفيش ربط للقناة ولا طلب باسورد. بتلصق النص اللي عايز تحوّله بس.</span></div>
+    <div><b>إنت اللي بتقرر</b><span>بتعدّل النتيجة قبل ما تنسخها، ومفيش حاجة بتتنشر من غير ما تنشرها أنت.</span></div>
+  </div>
+</section>
+
+<section id="pricing">
+  <h2>الأسعار</h2>
+  <p class="sub">ابدأ مجاناً. الأسعار دي مبدئية وبالجنيه المصري.</p>
+  <div class="plans" id="plans"></div>
+  <p class="pay" id="pay"></p>
+</section>
+
+<section id="refund">
+  <h2>سياسة الاسترجاع</h2>
+  <div class="box" id="refundBox"></div>
+</section>
+
+<section id="about">
+  <h2>مين ورا الموقع</h2>
+  <div class="box" id="aboutBox"></div>
+</section>
+
+<section>
+  <h2>أسئلة شائعة</h2>
+  <div id="faq"></div>
+</section>
+</main>
+
+<footer>
+  <a href="./privacy.html">سياسة الخصوصية</a><a href="./terms.html">الشروط والأحكام</a><a href="#refund">الاسترجاع</a>
+  <div>© 2026 اعمل ريلزك. بيعمل في مصر.</div>
+</footer>
+</div>
+
+<a id="waFloat" target="_blank" rel="noopener">كلمنا على واتساب</a>
+<script>
+// عدّل الإعدادين دول قبل الرفع
+const API_URL = "https://memaai.modyshabann878.workers.dev";               // رابط Cloudflare Worker بعد ما تنشره
+const WA_NUMBER = "201040257445"; // رقم واتساب بالصيغة الدولية بدون + (مثال: 201012345678)
+
+const NAMES = {facebook:"فيسبوك ريلز",tiktok:"تيك توك",instagram:"إنستجرام ريلز",shorts:"يوتيوب شورتس"};
+const DEMO = {
+  facebook:"الجزء من الفيديو: (أول كلام المقطع هيظهر هنا)\nالهوك: كنت بضيّع ساعات على فيديو وبعدها ينساه الناس.\nالسكريبت: [0-10ث] حكاية المشكلة. [10-40ث] إزاي غيّرت الطريقة. [40-60ث] النتيجة.\nالكابشن: حصل معاك كده؟ احكي لنا في التعليقات.\nالهاشتاجات: #صناعة_المحتوى #ريلز",
+  tiktok:"الجزء من الفيديو: (مقطع تاني من الفيديو)\nالهوك: وقّف! بتنزل فيديو وبيتنسى؟\nالسكريبت: [0-3ث] هوك. [3-20ث] 3 حاجات بسرعة. [20-30ث] خاتمة.\nالكابشن: جرّبها النهارده.\nالهاشتاجات: #تيك_توك #صناع_المحتوى",
+  instagram:"الجزء من الفيديو: (مقطع تالت)\nالهوك: 3 خطوات تخلي فيديو واحد يشتغل لك أسبوع.\nالسكريبت: [0-5ث] وعد. [5-40ث] الخطوات. [40-50ث] دعوة للحفظ.\nالكابشن: احفظ البوست ده لما تنزل فيديو جديد.\nالهاشتاجات: #انستجرام #ريلز",
+  shorts:"الجزء من الفيديو: (مقطع رابع)\nالعنوان: فيديو واحد = محتوى أسبوع كامل\nالسكريبت: [0-3ث] سؤال. [3-40ث] الفكرة. [40-55ث] جملة بترجّع للبداية.\nالهاشتاجات: #shorts"
+};
+const $ = id => document.getElementById(id);
+let data = {}, cur = "facebook", demo = false;
+const store = {get:k=>{try{return localStorage.getItem(k)||""}catch(e){return ""}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
+const ERR = {free_limit:"خلصت الفيديوهات المجانية. اشترك عشان تكمّل.",code_invalid:"الكود غلط أو منتهي.",no_quota:"رصيد الكود خلص. كلمنا على واتساب للتجديد.",too_short:"النص قصير. الصق نص الفيديو كامل.",server:"حصلت مشكلة. جرّب تاني."};
+$("code").value = store.get("code");
+$("hint").textContent = API_URL ? "فيديوهين مجاناً، من غير بطاقة." : "وضع تجريبي: النتيجة نموذجية لحد ما تربط الـ Backend.";
+
+function renderTabs(){
+  $("tabs").innerHTML = "";
+  Object.keys(NAMES).forEach(k=>{
+    const b = document.createElement("button");
+    b.className = "tab"; b.role = "tab"; b.textContent = NAMES[k];
+    b.setAttribute("aria-selected", k===cur);
+    b.onclick = ()=>{ data[cur] = $("text").value; cur = k; show(); };
+    $("tabs").appendChild(b);
+  });
+}
+function show(){ renderTabs(); $("text").value = data[cur] || ""; $("demoTag").hidden = !demo; $("msg").textContent = ""; }
+
+async function run(){
+  const text = $("src").value.trim();
+  if(API_URL && text.length < 200){ $("hint").className = "hint err"; $("hint").textContent = ERR.too_short; return; }
+  $("hint").className = "hint"; $("hint").textContent = "بنكتب لك...";
+  $("go").disabled = true;
+  try{
+    if(API_URL){
+      const r = await fetch(API_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text,url:$("url").value.trim(),tone:$("tone").value,code:$("code").value.trim()})});
+      const j = await r.json().catch(()=>({}));
+      if(!r.ok) throw new Error(j.error || "server");
+      data = j; demo = false;
+      $("hint").textContent = typeof j.remaining === "number" ? "جاهز. المتبقي لك: " + j.remaining + " فيديو." : "جاهز. عدّل في النص لو حبيت وبعدين انسخ.";
+    } else {
+      await new Promise(r=>setTimeout(r,700)); data = {...DEMO}; demo = true;
+      $("hint").textContent = "جاهز. عدّل في النص لو حبيت وبعدين انسخ.";
+    }
+    cur = "facebook"; $("out").style.display = "block"; show();
+  }catch(e){
+    $("hint").className = "hint err"; $("hint").textContent = ERR[e.message] || ERR.server;
+  }finally{ $("go").disabled = false; }
+}
+$("go").onclick = run; $("again").onclick = run;
+$("saveCode").onclick = ()=>{ store.set("code",$("code").value.trim()); $("codeMsg").textContent = "اتحفظ. هيتستخدم مع كل تحويل."; };
+$("copy").onclick = async ()=>{
+  try{
+    await navigator.clipboard.writeText($("text").value); $("msg").textContent = "اتنسخ";
+    if(API_URL) fetch(API_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({event:"copy",code:$("code").value.trim()})}).catch(()=>{});
+  }catch(e){ $("text").select(); $("msg").textContent = "ظلّل النص وانسخه يدوياً"; }
+};
+
+const DEFAULT = {
+  hero:{title:"اعمل ريلزك من فيديو يوتيوب في ثوانٍ.",lead:"الصق كلام فيديوك، وتطلع لك ريلز مختلف لكل منصة: فيسبوك وتيك توك وإنستجرام ويوتيوب شورتس، بسكريبت وكابشن وهاشتاجات."},
+  wa:WA_NUMBER,
+  pay:"الاشتراك عن طريق واتساب: بتدفع بفودافون كاش أو إنستاباي، وبتستلم كود تفعيل تكتبه في خانة الكود فوق.",
+  plans:[
+    {name:"مجاني",price:"0",unit:"جنيه",features:["فيديوهين تجربة","ريلز لـ 4 منصات","من غير علامة مائية"],pop:false,paid:false},
+    {name:"شهري",price:"199",unit:"جنيه / شهر",features:["20 فيديو في الشهر","كل النبرات وإعادة الكتابة","تعديل ونسخ وتصدير"],pop:true,paid:true},
+    {name:"سنوي",price:"1,790",unit:"جنيه / سنة",features:["كل مميزات الشهري","أرخص من الشهري بحوالي 25%"],pop:false,paid:true}
+  ],
+  refund:{title:"7 أيام من الاشتراك",body:"لو النتيجة مش مناسبة لك، تقدر تلغي وتاخد فلوسك خلال 7 أيام من الاشتراك، بشرطين:\n- ما تكونش نسخت أو صدّرت أي نتيجة.\n- يكون عدد الفيديوهات اللي حوّلتها أقل من 3.\nالنتائج اللي نسختها أو نشرتها بتعتبر استُخدمت، وبتنسحب من حق الاسترجاع. بنسجّل عمليات النسخ والتصدير عشان نطبّق الشرط ده بعدل. وبنكتبلك الشروط دي على واتساب قبل الدفع، وبنتأكد من موافقتك عليها."},
+  about:"أنا [اسمك]، صانع محتوى ومطوّر. عملت لعبة [اسم اللعبة] وبنزّل فيديوهات على يوتيوب، وبنيت الأداة دي لأني كنت بضيع وقت كل مرة أحوّل فيديو لمحتوى للمنصات التانية.\n[لينك البورتفوليو] | [لينك القناة] | [إيميل التواصل]",
+  faq:[
+    {q:"هل بيطلع الفيديو نفسه جاهز؟",a:"لا. بيطلع سكريبت وكابشن وهاشتاجات لكل منصة، مع تحديد الجزء المقترح من الفيديو. القص والتصوير والمونتاج عليك."},
+    {q:"إزاي أشترك؟",a:"اضغط اشترك، هتفتح لك رسالة واتساب. ادفع وابعت صورة التحويل، وهتستلم كود تفعيل تكتبه في خانة الكود."},
+    {q:"هل لازم أربط قناتي؟",a:"لا، ومفيش ربط قنوات دلوقتي. بتلصق نص فيديوك بس."},
+    {q:"لو الفيديو ملوش ترجمة؟",a:"حالياً لازم يكون له نص. تقدر تفعّل الترجمة التلقائية من استوديو يوتيوب، ورفع الصوت هيتضاف لاحقاً."},
+    {q:"الذكاء الاصطناعي ممكن يغلط؟",a:"ممكن. عشان كده النتيجة بتتعدل قبل النسخ، وراجعها دايماً قبل ما تنشر."},
+    {q:"هل بتخزنوا فيديوهاتي؟",a:"لا. النص بيتبعت لخدمة Gemini من Google لتوليد النتيجة فقط، ومبنخزنوش عندنا. التفاصيل في سياسة الخصوصية."}
+  ]
+};
+let C = DEFAULT;
+const h=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+function rich(el,t){el.textContent="";let ul=null;String(t||"").split("\n").forEach(l=>{l=l.trim();if(!l){ul=null;return}if(l.startsWith("- ")){if(!ul){ul=h("ul");el.append(ul)}ul.append(h("li","",l.slice(2)))}else{ul=null;el.append(h("p","",l))}})}
+function renderAll(){
+  $("waFloat").href="https://wa.me/"+C.wa+"?text="+encodeURIComponent("أهلاً، عندي استفسار عن موقع اعمل ريلزك.");
+  $("hTitle").textContent=C.hero.title;$("hLead").textContent=C.hero.lead;$("pay").textContent=C.pay;
+  const box=$("plans");box.textContent="";
+  C.plans.forEach(p=>{
+    const d=h("div","plan"+(p.pop?" pop":""));d.append(h("h3","",p.name));
+    const pr=h("div","price",p.price+" ");pr.append(h("small","",p.unit));d.append(pr);
+    const ul=h("ul");(p.features||[]).forEach(f=>ul.append(h("li","",f)));d.append(ul);
+    const a=h("a","",p.paid?"اشترك عبر واتساب":"جرّب دلوقتي");
+    if(p.paid){a.href="https://wa.me/"+C.wa+"?text="+encodeURIComponent("أهلاً، عايز أشترك في الباقة ("+p.name+") في موقع اعمل ريلزك. قرأت سياسة الاسترجاع وموافق عليها.");a.target="_blank";a.rel="noopener"}else a.href="#try";
+    d.append(a);box.append(d);
+  });
+  const rb=$("refundBox");rb.textContent="";rb.append(h("h3","",C.refund.title));const rd=h("div");rich(rd,C.refund.body);rb.append(rd);
+  rich($("aboutBox"),C.about);
+  const f=$("faq");f.textContent="";C.faq.forEach(q=>{const d=h("details");d.append(h("summary","",q.q),h("p","",q.a));f.append(d)});
+}
+renderAll();
+(async()=>{if(!API_URL)return;try{const r=await fetch(API_URL);if(r.ok){const j=await r.json();if(j&&Array.isArray(j.plans)){C={...DEFAULT,...j};renderAll()}}}catch(e){}})();
+
+// ---- لوحة الأدمن ----
+const ss={get:k=>{try{return sessionStorage.getItem(k)||""}catch(e){return ""}},set:(k,v)=>{try{sessionStorage.setItem(k,v)}catch(e){}},del:k=>{try{sessionStorage.removeItem(k)}catch(e){}}};
+async function api(body){const r=await fetch(API_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||"server");return j}
+function overlay(){const o0=$("adm");if(o0)o0.remove();const o=h("div");o.id="adm";const i=h("div","adm-in");o.append(i);document.body.append(o);return i}
+function closeAdm(){const o=$("adm");if(o)o.remove()}
+function fld(label,val,set,multi){const l=h("label","",label);const i=multi?h("textarea"):h("input");i.value=val==null?"":val;i.oninput=()=>set(i.value);l.append(i);return l}
+function chk(label,val,set){const l=h("label");const i=h("input");i.type="checkbox";i.checked=!!val;i.onchange=()=>set(i.checked);l.append(i,document.createTextNode(label));return l}
+function askPass(){
+  if(!API_URL){alert("اربط الـ Worker الأول: ضع رابطه في API_URL.");return}
+  const i=overlay();i.append(h("h3","","دخول الأدمن"));
+  const p=h("input");p.type="password";p.placeholder="الباسورد";p.autocomplete="current-password";
+  const m=h("p","hint"),b=h("button","","دخول"),x=h("button","ghost","إغلاق");
+  b.onclick=async()=>{try{await api({action:"verify",key:p.value});ss.set("ak",p.value);openAdm(p.value)}catch(e){m.className="hint err";m.textContent=e.message==="locked"?"محاولات كتير. جرّب بعد ساعة.":"الباسورد غلط."}};
+  x.onclick=closeAdm;i.append(p,m,b,x);p.focus();
+}
+function openAdm(key){
+  const E=JSON.parse(JSON.stringify(C));let rem=20,days="";
+  const i=overlay(),m=h("p","hint");
+  const draw=()=>{
+    i.textContent="";i.append(h("h3","","لوحة التحكم"));
+    i.append(fld("العنوان الرئيسي",E.hero.title,v=>E.hero.title=v,1),fld("الوصف تحت العنوان",E.hero.lead,v=>E.hero.lead=v,1),fld("رقم واتساب (دولي بدون +)",E.wa,v=>E.wa=v),fld("نص الدفع تحت الأسعار",E.pay,v=>E.pay=v,1));
+    i.append(h("h4","","الباقات"));
+    E.plans.forEach((p,n)=>{
+      const c=h("div","adm-card");
+      c.append(fld("الاسم",p.name,v=>p.name=v),fld("السعر",p.price,v=>p.price=v),fld("الوحدة (مثلاً جنيه / شهر)",p.unit,v=>p.unit=v),fld("المميزات (كل سطر ميزة)",(p.features||[]).join("\n"),v=>p.features=v.split("\n").map(t=>t.trim()).filter(Boolean),1),chk("باقة مميزة",p.pop,v=>p.pop=v),chk("مدفوعة (زر واتساب)",p.paid,v=>p.paid=v));
+      const d=h("button","ghost","احذف الباقة");d.onclick=()=>{E.plans.splice(n,1);draw()};c.append(d);i.append(c);
+    });
+    const ap=h("button","ghost","+ أضف باقة");ap.onclick=()=>{E.plans.push({name:"باقة جديدة",price:"0",unit:"جنيه",features:[],pop:false,paid:true});draw()};i.append(ap);
+    i.append(h("h4","","سياسة الاسترجاع"),fld("العنوان",E.refund.title,v=>E.refund.title=v),fld("النص (السطر اللي يبدأ بـ - يبقى نقطة)",E.refund.body,v=>E.refund.body=v,1));
+    i.append(h("h4","","مين ورا الموقع"),fld("النص",E.about,v=>E.about=v,1));
+    i.append(h("h4","","الأسئلة الشائعة"));
+    E.faq.forEach((f,n)=>{const c=h("div","adm-card");c.append(fld("السؤال",f.q,v=>f.q=v),fld("الإجابة",f.a,v=>f.a=v,1));const d=h("button","ghost","احذف السؤال");d.onclick=()=>{E.faq.splice(n,1);draw()};c.append(d);i.append(c)});
+    const af=h("button","ghost","+ أضف سؤال");af.onclick=()=>{E.faq.push({q:"سؤال جديد",a:""});draw()};i.append(af);
+    const sv=h("button","","حفظ ونشر");
+    sv.onclick=async()=>{m.className="hint";m.textContent="بيتحفظ...";try{await api({action:"save_content",key,content:E});C=JSON.parse(JSON.stringify(E));renderAll();m.textContent="اتحفظ واتنشر."}catch(e){m.className="hint err";m.textContent="فشل الحفظ."}};
+    i.append(h("h4","","أكواد التفعيل"),fld("عدد الفيديوهات",rem,v=>rem=+v||0),fld("الصلاحية بالأيام (اختياري)",days,v=>days=v));
+    const out=h("p","hint"),cr=h("button","","أنشئ كود"),ls=h("button","ghost","عرض الأكواد"),lt=h("pre");
+    cr.onclick=async()=>{try{const j=await api({action:"create_code",key,remaining:rem,days:+days||0});out.className="hint";out.textContent="الكود: "+j.code}catch(e){out.className="hint err";out.textContent="فشل إنشاء الكود."}};
+    ls.onclick=async()=>{try{const j=await api({action:"list_codes",key});lt.textContent=j.codes.map(c=>c.code+" | متبقي "+c.remaining+" | استُخدم "+(c.used||0)+" | نُسخ "+(c.copied||0)).join("\n")||"مفيش أكواد."}catch(e){lt.textContent="فشل."}};
+    i.append(cr,ls,out,lt,h("hr"));
+    const cl=h("button","ghost","إغلاق"),lo=h("button","ghost","خروج");cl.onclick=closeAdm;lo.onclick=()=>{ss.del("ak");closeAdm()};
+    i.append(m,sv,cl,lo);
+  };
+  draw();
+}
+let taps=0,tt;
+$("me").onclick=async()=>{
+  taps++;clearTimeout(tt);tt=setTimeout(()=>taps=0,3000);
+  if(taps<10)return;taps=0;
+  const k=ss.get("ak");
+  if(k&&API_URL){try{await api({action:"verify",key:k});openAdm(k);return}catch(e){ss.del("ak")}}
+  askPass();
+};
+</script>
+</body>
+</html>
