@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://modyshabann878-tech.github.io/memaAi/sitemap.xml
