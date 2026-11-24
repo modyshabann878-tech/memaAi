@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="theme-color" content="#0b1712">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <meta name="google-site-verification" content="ضع_الكود_هنا"> -->
+<link rel="icon" type="image/png" href="logo-icon.png">
+<link rel="apple-touch-icon" href="logo-icon.png">
+<meta property="og:image" content="https://modyshabann878-tech.github.io/memaAi/logo.jpg">
+<meta property="og:title" content="memai">
+<title>memai | رسّيني على زرعتي</title>
+<meta name="description" content="memai: رسّيني على زرعتي. مساعد زراعي بالذكاء الاصطناعي: ملف لكل أرض، تحليل صور، وخطة رش بالكميات حسب مساحتك وخزانك.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--tx:#e8f5ec;--mut:#9fc0ae;--bg:#0b1712;--card:#12251c;--line:#25473a;--a1:#34d399;--a2:#14b8a6;--ok:#4ade80;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{max-width:100%;overflow-x:hidden}
+body{overflow-wrap:anywhere}
+img,svg{max-width:100%}
+input,select,textarea,button{max-width:100%}
+.row>*,.bar>*,.herow>*{min-width:0}
+body{margin:0;font-family:"IBM Plex Sans Arabic",Tahoma,Arial,sans-serif;color:var(--tx);line-height:1.8;font-size:17px;background:radial-gradient(900px 480px at 85% -8%,rgba(20,184,166,.28),transparent 70%),radial-gradient(700px 420px at 5% 6%,rgba(52,211,153,.2),transparent 70%),linear-gradient(rgba(120,255,180,.05) 1px,transparent 1px) 0 0/44px 44px,linear-gradient(90deg,rgba(120,255,180,.05) 1px,transparent 1px) 0 0/44px 44px,var(--bg)}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px;overflow-x:clip}
+header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px 12px;padding:16px 0}
+nav{display:flex;gap:16px;overflow-x:auto;white-space:nowrap;max-width:100%}
+@media (max-width:560px){nav{flex:1 1 100%;order:3}}
+.brand{display:flex;align-items:center;gap:10px}
+#me{width:46px;height:46px;padding:0;border-radius:50%;border:2px solid var(--a1);overflow:hidden;display:grid;place-items:center;background:#08120d;font-size:20px;box-shadow:0 0 0 3px rgba(52,211,153,.18),0 6px 0 #0b6b45,0 12px 20px rgba(52,211,153,.35)}
+#me:active{transform:translateY(3px);box-shadow:0 0 0 3px rgba(52,211,153,.18),0 3px 0 #0b6b45}
+#me img{width:100%;height:100%;object-fit:cover;display:block}
+.logo{font-weight:700;font-size:19px;text-decoration:none;white-space:nowrap}
+nav a{text-decoration:none;color:var(--mut);font-size:15px}
+nav a:hover{color:var(--tx)}
+.herow{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
+.herow .hero{flex:1 1 340px}
+.hero{padding:30px 0 20px}
+h1{font-size:clamp(30px,6vw,50px);line-height:1.35;margin:0 0 14px;font-weight:700;background:linear-gradient(90deg,#86efac,#5eead4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);font-size:19px;margin:0 0 20px}
+.logo3d{flex:0 1 330px;margin:0 auto;width:min(100%,300px);perspective:800px;touch-action:pan-y}
+.l3a{transform-style:preserve-3d;animation:fl 7s ease-in-out infinite}
+.logo3d.on .l3a{animation-play-state:paused}
+.l3{position:relative;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .15s ease-out}
+.l3::before{content:"";position:absolute;inset:8%;border-radius:22px;background:linear-gradient(135deg,#34d399,#14b8a6);filter:blur(24px);opacity:.75;transform:translateZ(-60px)}
+.l3 img{position:relative;display:block;width:100%;height:auto;border-radius:22px;box-shadow:0 20px 40px rgba(0,0,0,.5)}
+.l3::after{content:"";position:absolute;inset:0;border-radius:22px;background:radial-gradient(circle at var(--mx,50%) var(--my,25%),rgba(255,255,255,.3),transparent 55%);transform:translateZ(2px);pointer-events:none}
+@keyframes fl{0%,100%{transform:translateY(0) rotateY(-7deg)}50%{transform:translateY(-8px) rotateY(7deg)}}
+.tool{background:linear-gradient(180deg,#14281f,#0e1a14);border:1.5px solid rgba(110,255,170,.45);border-radius:18px;padding:20px;box-shadow:0 1px 0 rgba(255,255,255,.08) inset,0 10px 0 -2px #07100b,0 24px 50px rgba(52,211,153,.14)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+input,select,textarea{font:inherit;color:var(--tx);background:#08120d;border:1.5px solid var(--line);border-radius:12px;padding:13px 14px}
+input::placeholder,textarea::placeholder{color:#6a8f7c}
+input[type=url]{flex:1 1 260px;direction:ltr;text-align:left}
+button{font:inherit;cursor:pointer;border:0;border-radius:12px;padding:13px 22px;color:#04210f;font-weight:700;background:linear-gradient(180deg,#86efac,#34d399 50%,#10b981);box-shadow:0 1px 0 rgba(255,255,255,.55) inset,0 5px 0 #0b6b45,0 12px 20px rgba(52,211,153,.28);transition:transform .08s,box-shadow .08s}
+button:active{transform:translateY(4px);box-shadow:0 1px 0 rgba(255,255,255,.55) inset,0 1px 0 #0b6b45,0 4px 8px rgba(52,211,153,.2)}
+button:disabled{opacity:.6;cursor:wait}
+button.ghost{background:#173025;color:var(--tx);border:1px solid var(--line);box-shadow:0 1px 0 rgba(255,255,255,.1) inset,0 4px 0 #07100b}
+button.ghost:active{box-shadow:0 1px 0 #07100b;transform:translateY(3px)}
+:focus-visible{outline:3px solid var(--a1);outline-offset:2px}
+.hint{font-size:14px;color:var(--mut);margin:10px 0 0}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:18px 0 0;border-bottom:1.5px solid var(--line)}
+.tab{background:transparent;box-shadow:none;color:var(--mut);font-weight:500;padding:9px 14px;border-radius:10px 10px 0 0;display:inline-flex;gap:6px;align-items:center}
+.tab:active{transform:none;box-shadow:none}
+.tab .ic{width:16px;height:16px}
+.tab[aria-selected=true]{background:#1a3a2b;color:#fff;box-shadow:inset 0 -3px 0 var(--a1)}
+#out{display:none}
+textarea{width:100%;min-height:220px;margin-top:12px;line-height:1.9;resize:vertical}
+#src{min-height:130px;margin:0 0 10px}
+.bar{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.tag{font-size:13px;background:#17382b;border:1px solid #2f8f66;color:#c9f5de;border-radius:8px;padding:2px 10px}
+#msg{color:var(--ok);font-size:14px}
+.err{color:#ff8a8a}
+.code{margin-top:14px;align-items:center}
+.code input{flex:1 1 180px;padding:10px 12px;text-transform:uppercase}
+.code .hint{margin:0}
+section{padding:56px 0 0}
+h2{font-size:clamp(24px,4vw,32px);margin:0 0 8px}
+.sub{color:var(--mut);margin:0 0 24px;max-width:620px}
+.cards,.steps,.plans{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));padding:0;list-style:none;margin:0}
+.steps li,.fcard,.plan,.box{background:linear-gradient(180deg,#14281f,#10211a);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 1px 0 rgba(255,255,255,.09) inset,0 8px 0 -1px var(--edge,#24543f),0 22px 30px rgba(0,0,0,.4);transition:transform .25s cubic-bezier(.2,.8,.2,1);touch-action:pan-y;will-change:transform}
+.steps b,.fcard b{display:block;margin-bottom:2px}
+.fcard span,.steps li{color:var(--mut)}
+.steps b,.fcard b{color:var(--tx)}
+.i3{display:inline-grid;place-items:center;width:54px;height:54px;border-radius:16px;margin-bottom:12px;color:#fff;position:relative;background:linear-gradient(145deg,var(--g1),var(--g2));box-shadow:0 2px 0 rgba(255,255,255,.45) inset,0 -6px 10px rgba(0,0,0,.25) inset,0 6px 0 var(--gd),0 14px 22px var(--gs)}
+.i3::before{content:"";position:absolute;inset:3px 3px 50%;border-radius:13px 13px 40% 40%;background:linear-gradient(rgba(255,255,255,.38),rgba(255,255,255,0))}
+.ic{width:1em;height:1em;fill:currentColor;display:block}
+.i3 .ic{width:28px;height:28px;position:relative;filter:drop-shadow(0 2px 1px rgba(0,0,0,.35))}
+.c1{--g1:#86efac;--g2:#16a34a;--gd:#0b6b45;--gs:rgba(34,197,94,.4)}
+.c2{--g1:#5eead4;--g2:#0d9488;--gd:#0a5a52;--gs:rgba(20,184,166,.45)}
+.c3{--g1:#a3e635;--g2:#4d9d12;--gd:#2d5f0a;--gs:rgba(132,204,22,.4)}
+.c4{--g1:#34d399;--g2:#047857;--gd:#064e3b;--gs:rgba(16,185,129,.45)}
+.plan{display:flex;flex-direction:column}
+.plan.pop{border:1.5px solid var(--a1);--edge:#16a34a;box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 8px 0 -1px var(--edge),0 24px 40px rgba(52,211,153,.25)}
+.plan h3{margin:0}
+.price{font-size:34px;font-weight:700;margin:6px 0}
+.price small{font-size:15px;font-weight:400;color:var(--mut)}
+.plan ul{padding-inline-start:20px;margin:8px 0 20px;color:var(--mut);flex:1}
+.plan a{display:block;text-align:center;text-decoration:none;padding:12px;border-radius:12px;font-weight:700;background:#173025;color:var(--tx);border:1px solid var(--line);box-shadow:0 4px 0 #07100b}
+.plan.pop a{background:linear-gradient(180deg,#86efac,#34d399 50%,#10b981);color:#04210f;border:0;box-shadow:0 5px 0 #0b6b45,0 12px 20px rgba(52,211,153,.28)}
+.pay{font-size:14px;color:var(--mut);margin-top:16px}
+.box{max-width:760px}
+.box h3{margin:0 0 6px}
+.box ul{margin:6px 0 0;padding-inline-start:20px}
+details{border-top:1px solid var(--line);padding:12px 0}
+summary{cursor:pointer;font-weight:500}
+details p{margin:8px 0 0;color:var(--mut)}
+footer{margin-top:64px;padding:26px 0 90px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+footer a{margin-inline-end:16px}
+#waFloat{position:fixed;inset-inline-start:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;align-items:center;gap:8px;background:linear-gradient(180deg,#6ee7a0,#22c55e);color:#04210f;font-weight:700;text-decoration:none;padding:9px 14px;border-radius:999px;font-size:14px;box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 5px 0 #0f6b32,0 14px 24px rgba(0,0,0,.4)}
+#waFloat .ic{width:20px;height:20px}
+#adm{position:fixed;inset:0;background:rgba(2,10,6,.8);z-index:50;overflow:auto;padding:14px}
+.adm-in{background:#10211a;border:1px solid var(--line);max-width:720px;margin:0 auto;border-radius:16px;padding:18px}
+.adm-in h3,.adm-in h4{margin:18px 0 4px}
+.adm-in label{display:block;margin:10px 0 2px;font-size:14px;color:var(--mut)}
+.adm-in input,.adm-in textarea{width:100%;padding:9px;min-height:0;margin:0;border-radius:8px}
+.adm-in textarea{min-height:80px}
+.adm-in input[type=checkbox]{width:auto;margin-inline-end:6px}
+.adm-in button{margin:10px 0 0;margin-inline-end:8px}
+.adm-card{border:1px solid var(--line);border-radius:12px;padding:4px 12px 12px;margin:10px 0}
+.adm-in pre{direction:ltr;text-align:left;white-space:pre-wrap;font-size:13px}
+#mainTabs{margin:0 0 14px}
+.tool label{display:block;font-size:14px;color:var(--mut)}
+.tool label input,.tool label select{width:100%;margin-top:4px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:12px}
+.inl{display:flex;gap:8px}.inl input{flex:1}.inl select{flex:0 0 90px;width:auto!important}
+.filebtn{display:inline-block!important;padding:12px 18px;border-radius:12px;background:#173025;border:1px solid var(--line);cursor:pointer;color:var(--tx)!important;font-size:15px!important}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.thumbs img{width:72px;height:72px;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+#q{min-height:110px;margin-top:0}
+.rc{background:#0e1a14;border:1px solid var(--line);border-radius:14px;padding:14px;margin-top:12px}
+.rc h4{margin:0 0 6px;color:var(--a1)}.rc p{margin:4px 0}.rc ul{margin:4px 0 0;padding-inline-start:20px}
+.rc.warn{border-color:#b45309;background:#2a1d08}.rc.warn h4{color:#fbbf24}
+#out button{margin-top:12px}
+@media (max-width:430px){body{font-size:16px}.tool{padding:14px}.wrap{padding:0 14px}.hero{padding:18px 0 12px}.lead{font-size:17px}section{padding-top:44px}.tool .row>*{flex:1 1 100%}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.l3a{animation:none}.steps li,.fcard,.plan{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="ic-play" viewBox="0 0 24 24"><path d="M8 5.2v13.6a1 1 0 0 0 1.5.9l11-6.8a1 1 0 0 0 0-1.8l-11-6.8a1 1 0 0 0-1.5.9z"/></symbol>
+<symbol id="ic-note" viewBox="0 0 24 24"><path d="M9 17.5V6.2L20 4v11.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.8" cy="17.8" r="2.8"/><circle cx="17.8" cy="15.8" r="2.8"/></symbol>
+<symbol id="ic-camera" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="17" cy="7" r="1.3"/></symbol>
+<symbol id="ic-bolt" viewBox="0 0 24 24"><path d="M13.5 2.5 4.8 13.6a.8.8 0 0 0 .6 1.3h5l-1.2 6.6a.5.5 0 0 0 .9.4l8.7-11.1a.8.8 0 0 0-.6-1.3h-5l1.2-6.6a.5.5 0 0 0-.9-.4z"/></symbol>
+<symbol id="ic-paste" viewBox="0 0 24 24"><rect x="5.5" y="4.5" width="13" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2.2"/><rect x="9" y="2.5" width="6" height="4" rx="1.6"/><path d="M9 12h6M9 16h4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+<symbol id="ic-spark" viewBox="0 0 24 24"><path d="M12 2.5l2.2 6.3 6.3 2.2-6.3 2.2L12 19.5l-2.2-6.3L3.5 11l6.3-2.2z"/><path d="M19 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></symbol>
+<symbol id="ic-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M5.5 15.5V7A3.5 3.5 0 0 1 9 3.5h8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+<symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 2.8l7.5 3v5.6c0 4.5-3 7.8-7.5 9.8-4.5-2-7.5-5.3-7.5-9.8V5.8z"/><path d="M8.6 12l2.4 2.4 4.4-4.6" fill="none" stroke="#08120d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ic-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="3"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+<symbol id="ic-sliders" viewBox="0 0 24 24"><path d="M4 7h9M19 7h1M4 17h1M11 17h9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="7" r="2.6"/><circle cx="8" cy="17" r="2.6"/></symbol>
+<symbol id="ic-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19.5 7" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ic-gem" viewBox="0 0 24 24"><path d="M7 3.5h10l4 5.5-9 11.5L3 9z"/><path d="M3 9h18M9.5 3.5 8 9l4 11.5M14.5 3.5 16 9l-4 11.5" fill="none" stroke="#08120d" stroke-opacity=".35" stroke-width="1.2"/></symbol>
+<symbol id="ic-chat" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.4 4a.6.6 0 0 1-1-.4V16H6.5"/></symbol>
+<symbol id="ic-drop" viewBox="0 0 24 24"><path d="M12 2.8c3.6 4.3 6 7.4 6 10.6a6 6 0 0 1-12 0c0-3.2 2.4-6.3 6-10.6z"/></symbol>
+<symbol id="ic-leaf" viewBox="0 0 24 24"><path d="M20 4C10 4 4.5 9 4.5 15c0 1.6.5 3 1.3 4.2C6.8 13.5 10 10.5 15 8.6 11 11 8.4 14 7 20c.6.1 1.3.2 2 .2C16 20 20.5 14 20 4z"/></symbol>
+</defs></svg>
+
+<div class="wrap">
+<header>
+  <div class="brand"><button id="me" aria-label="صورة صاحب الموقع"><img src="logo-icon.png" alt="" onerror="this.parentNode.textContent='👤'"></button><a class="logo" href="#">memai</a></div>
+  <nav><a href="#how">إزاي بيشتغل</a><a href="#pricing">الأسعار</a><a href="#refund">الاسترجاع</a><a href="#about">مين ورا الموقع</a></nav>
+</header>
+
+<main>
+<div class="herow">
+<div class="hero">
+  <h1 id="hTitle">رسّيني على زرعتي</h1>
+  <p class="lead" id="hLead">ملف لكل أرض: المحصول والمساحة وطريقة الري وأداة الرش. صوّر زرعتك واسأل، وتاخد خطة بالمبيد المناسب والكمية على قد مساحتك وخزان الرش بتاعك.</p>
+</div>
+<div class="logo3d" id="l3d"><div class="l3a"><div class="l3"><img src="logo.jpg" width="640" height="464" alt="شعار memai" decoding="async"></div></div></div>
+</div>
+
+<div class="tool" id="try">
+  <div class="tabs" role="tablist" id="mainTabs">
+    <button class="tab" data-t="farm" aria-selected="true">ملف الزرعة</button>
+    <button class="tab" data-t="ask" aria-selected="false">رسّيني</button>
+    <button class="tab" data-t="log" aria-selected="false">السجل</button>
+  </div>
+  <div id="p-farm" class="pane">
+    <div class="grid2">
+      <label>اسم الأرض<input id="f-name" placeholder="مثلاً: أرض الشرقية"></label>
+      <label>المحصول<input id="f-crop" list="crops" placeholder="طماطم، قمح..."></label>
+      <label>المحافظة / المنطقة<input id="f-region"></label>
+      <label>المساحة<span class="inl"><input id="f-area" type="number" min="0" step="any" inputmode="decimal"><select id="f-unit"><option>فدان</option><option>قيراط</option><option>متر</option></select></span></label>
+      <label>حالة الزراعة<select id="f-stage"><option value="planning">لسه هزرع</option><option value="early">زرعت من قريب</option><option value="mid">في نص الزرعة</option><option value="late">قرب الحصاد</option></select></label>
+      <label>تاريخ الزراعة<input id="f-date" type="date"></label>
+      <label>طريقة الري<select id="f-irr"><option>غمر</option><option>رش</option><option>تنقيط</option></select></label>
+      <label>نوع التربة<select id="f-soil"><option>مش عارف</option><option>طينية</option><option>رملية</option><option>صفراء</option></select></label>
+      <label>أداة الرش<select id="f-tool"><option>ظهرية (كتف)</option><option>موتور رش</option><option>ماكينة رش على تراكتور</option></select></label>
+      <label>سعة خزان الرش (لتر)<input id="f-tank" type="number" min="1" step="any" inputmode="decimal" value="16"></label>
+      <label>ماتور الري (اختياري)<input id="f-pump" placeholder="مثلاً: 5 حصان أو 30 م³/ساعة"></label>
+    </div>
+    <div class="bar"><button id="saveFarm">احفظ الملف</button><span id="farmMsg" class="hint"></span></div>
+    <datalist id="crops"><option value="طماطم"><option value="بطاطس"><option value="قمح"><option value="ذرة"><option value="أرز"><option value="قطن"><option value="فول"><option value="برسيم"><option value="بصل"><option value="ثوم"><option value="خيار"><option value="فلفل"><option value="باذنجان"><option value="كوسة"><option value="عنب"><option value="موالح"><option value="مانجو"><option value="نخيل"><option value="زيتون"><option value="قصب سكر"></datalist>
+  </div>
+  <div id="p-ask" class="pane" hidden>
+    <textarea id="q" placeholder="إيه اللي شايفه في الزرعة؟ أو عايز تسأل عن إيه؟ (مثلاً: الأوراق بتصفر وفي بقع)"></textarea>
+    <div class="row" style="margin-top:10px"><label class="filebtn">صوّر أو اختار صور (حتى 4)<input id="imgs" type="file" accept="image/*" multiple hidden></label><span id="imgInfo" class="hint"></span></div>
+    <div id="thumbs" class="thumbs"></div>
+    <div class="bar"><button id="go">رسّيني</button></div>
+    <p class="hint" id="hint"></p>
+    <div id="out"></div>
+  </div>
+  <div id="p-log" class="pane" hidden>
+    <div class="grid2">
+      <label>التاريخ<input id="l-date" type="date"></label>
+      <label>النوع<select id="l-type"><option>ري</option><option>رش</option><option>تسميد</option><option>عزيق</option><option>ملاحظة</option></select></label>
+    </div>
+    <label style="margin-top:10px">اللي عملته (المنتج والكمية لو رشيت)<textarea id="l-text" style="min-height:70px;margin-top:4px"></textarea></label>
+    <div class="bar"><button id="addLog">أضف للسجل</button></div>
+    <div id="logList"></div>
+  </div>
+  <div class="row code"><input id="code" type="text" placeholder="عندك كود تفعيل؟" aria-label="كود التفعيل" dir="ltr" autocomplete="off"><button id="saveCode" class="ghost">فعّل</button><span id="codeMsg" class="hint"></span></div>
+</div>
+
+<section id="how">
+  <h2>إزاي بيشتغل</h2>
+  <p class="sub">ثلاث خطوات من غير ما تكتب حاجة من الأول.</p>
+  <ol class="steps">
+    <li data-tilt><span class="i3 c1"><svg class="ic" aria-hidden="true"><use href="#ic-paste"/></svg></span><b>اعمل ملف زرعتك</b>المحصول والمساحة وميعاد الزراعة وطريقة الري وسعة خزان الرش.</li>
+    <li data-tilt><span class="i3 c2"><svg class="ic" aria-hidden="true"><use href="#ic-camera"/></svg></span><b>صوّر واسأل</b>صوّر الورق أو الثمرة أو النبات كله، واكتب اللي شايفه.</li>
+    <li data-tilt><span class="i3 c3"><svg class="ic" aria-hidden="true"><use href="#ic-spark"/></svg></span><b>خد خطتك</b>إيه تعمله وترش بإيه، والكمية للخزان وللمساحة كلها.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>إيه اللي بتاخده</h2>
+  <p class="sub">مش نصيحة عامة: نصيحة على قد أرضك وأدواتك.</p>
+  <div class="cards">
+    <div class="fcard" data-tilt><span class="i3 c1"><svg class="ic" aria-hidden="true"><use href="#ic-paste"/></svg></span><b>ملف لكل أرض</b><span>المساحة وميعاد الزراعة وطريقة الري وأداة الرش.</span></div>
+    <div class="fcard" data-tilt><span class="i3 c2"><svg class="ic" aria-hidden="true"><use href="#ic-camera"/></svg></span><b>تحليل الصور</b><span>بتصوّر المشكلة وبياخد الصورة في الحسبان مع كلامك.</span></div>
+    <div class="fcard" data-tilt><span class="i3 c3"><svg class="ic" aria-hidden="true"><use href="#ic-drop"/></svg></span><b>خطة رش بالكميات</b><span>الجرعة لكل 100 لتر، وفي الخزان، وللمساحة كلها.</span></div>
+    <div class="fcard" data-tilt><span class="i3 c4"><svg class="ic" aria-hidden="true"><use href="#ic-check"/></svg></span><b>سجل ومواعيد</b><span>آخر رشة وآخر ري، والمواعيد الجاية.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>ليه تثق فيه</h2>
+  <div class="cards">
+    <div class="fcard" data-tilt><span class="i3 c1"><svg class="ic" aria-hidden="true"><use href="#ic-shield"/></svg></span><b>إرشاد مش بديل المهندس</b><span>بنوضّح درجة التأكد، ولو الصورة مش واضحة بنطلب معلومات أكتر بدل التخمين.</span></div>
+    <div class="fcard" data-tilt><span class="i3 c2"><svg class="ic" aria-hidden="true"><use href="#ic-lock"/></svg></span><b>ملفك على جهازك</b><span>ملف الزرعة والسجل محفوظين على موبايلك مش على سيرفر.</span></div>
+    <div class="fcard" data-tilt><span class="i3 c3"><svg class="ic" aria-hidden="true"><use href="#ic-check"/></svg></span><b>الكميات على مساحتك</b><span>الجرعة بتتحسب على مساحتك وسعة خزانك، وبتراجعها على ملصق المنتج.</span></div>
+    <div class="fcard" data-tilt><span class="i3 c4"><svg class="ic" aria-hidden="true"><use href="#ic-leaf"/></svg></span><b>الأمان الأول</b><span>كل خطة فيها فترة الأمان قبل الحصاد وتنبيهات الوقاية.</span></div>
+  </div>
+</section>
+
+<section id="pricing">
+  <h2>الأسعار</h2>
+  <p class="sub">ابدأ مجاناً. الأسعار دي مبدئية وبالجنيه المصري.</p>
+  <div class="plans" id="plans"></div>
+  <p class="pay" id="pay"></p>
+</section>
+
+<section id="refund">
+  <h2>سياسة الاسترجاع</h2>
+  <div class="box" id="refundBox"></div>
+</section>
+
+<section id="about">
+  <h2>مين ورا الموقع</h2>
+  <div class="box" id="aboutBox"></div>
+</section>
+
+<section>
+  <h2>أسئلة شائعة</h2>
+  <div id="faq"></div>
+</section>
+</main>
+
+<footer>
+  <a href="./privacy.html">سياسة الخصوصية</a><a href="./terms.html">الشروط والأحكام</a><a href="#refund">الاسترجاع</a>
+  <div>© 2026 memai. بيعمل في مصر.</div>
+</footer>
+</div>
+
+<a id="waFloat" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#ic-chat"/></svg>كلمنا على واتساب</a>
+<script>
+// عدّل الإعدادين دول قبل الرفع
+const API_URL = "https://memaai.modyshabann878.workers.dev";               // رابط Cloudflare Worker بعد ما تنشره
+const WA_NUMBER = "201040257445"; // رقم واتساب بالصيغة الدولية بدون + (مثال: 201012345678)
+
+const $ = id => document.getElementById(id);
+const store = {get:k=>{try{return localStorage.getItem(k)||""}catch(e){return ""}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
+const ERR = {free_limit:"خلصت التحليلات المجانية. اشترك عشان تكمّل.",code_invalid:"الكود غلط أو منتهي.",no_quota:"رصيد الكود خلص. كلمنا على واتساب للتجديد.",need_info:"اكتب سؤالك أو احفظ ملف الزرعة أو ضيف صورة الأول.",server:"حصلت مشكلة ومتخصمش من رصيدك. جرّب تاني.",too_big:"الصور كبيرة. قلل عددها."};
+const F = ["name","crop","region","area","unit","stage","date","irr","soil","tool","tank","pump"];
+let farm = {}, logs = [], imgs = [];
+try{farm=JSON.parse(store.get("farm")||"{}");logs=JSON.parse(store.get("logs")||"[]")}catch(e){}
+const hint=(t,e)=>{$("hint").className="hint"+(e?" err":"");$("hint").textContent=t};
+function loadFarm(){F.forEach(k=>{if(farm[k]!=null&&farm[k]!=="")$("f-"+k).value=farm[k]});$("code").value=store.get("code");$("l-date").value=new Date().toISOString().slice(0,10);hint(API_URL?"تحليلين مجاناً من غير بطاقة.":"")}
+$("saveFarm").onclick=()=>{F.forEach(k=>farm[k]=$("f-"+k).value.trim());store.set("farm",JSON.stringify(farm));$("farmMsg").textContent="اتحفظ على جهازك."};
+document.querySelectorAll("#mainTabs .tab").forEach(b=>b.onclick=()=>{document.querySelectorAll("#mainTabs .tab").forEach(x=>x.setAttribute("aria-selected",x===b));["farm","ask","log"].forEach(t=>$("p-"+t).hidden=t!==b.dataset.t)});
+$("saveCode").onclick=()=>{store.set("code",$("code").value.trim());$("codeMsg").textContent="اتحفظ. هيتستخدم مع كل تحليل."};
+function drawLogs(){const box=$("logList");box.textContent="";for(let i=logs.length-1;i>=0;i--){const l=logs[i],c=h("div","rc");c.append(h("p","",l.d+" · "+l.t+": "+l.x));const d=h("button","ghost","احذف");d.onclick=()=>{logs.splice(i,1);store.set("logs",JSON.stringify(logs));drawLogs()};c.append(d);box.append(c)}}
+$("addLog").onclick=()=>{const x=$("l-text").value.trim();if(!x)return;logs.push({d:$("l-date").value,t:$("l-type").value,x});logs.sort((a,b)=>a.d<b.d?-1:1);store.set("logs",JSON.stringify(logs));$("l-text").value="";drawLogs()};
+function shrink(f){return new Promise((res,rej)=>{const u=URL.createObjectURL(f),i=new Image();i.onload=()=>{const k=Math.min(1,1024/Math.max(i.width,i.height)),c=document.createElement("canvas");c.width=Math.round(i.width*k);c.height=Math.round(i.height*k);c.getContext("2d").drawImage(i,0,0,c.width,c.height);URL.revokeObjectURL(u);res(c.toDataURL("image/jpeg",.8))};i.onerror=rej;i.src=u})}
+$("imgs").onchange=async e=>{imgs=[];$("thumbs").textContent="";for(const f of [...e.target.files].slice(0,4)){try{const d=await shrink(f);imgs.push(d.split(",")[1]);const im=new Image();im.src=d;$("thumbs").append(im)}catch(x){}}$("imgInfo").textContent=imgs.length?imgs.length+" صورة":""};
+const toFed=()=>{const a=+farm.area||0;return farm.unit==="قيراط"?a/24:farm.unit==="متر"?a/4200:a};
+const fmt=n=>(Math.round(n*10)/10).toLocaleString("en");
+const amt=(n,u)=>u==="جم"&&n>=1000?fmt(n/1000)+" كجم":u==="سم3"&&n>=1000?fmt(n/1000)+" لتر":fmt(n)+" "+u;
+const card=(t,c)=>{const e=h("div","rc"+(c?" "+c:""));if(t)e.append(h("h4","",t));return e};
+const list=a=>{const u=h("ul");(a||[]).forEach(x=>u.append(h("li","",typeof x==="string"?x:(x.when?x.when+": "+x.what:""))));return u};
+function sprayCard(s){
+  const c=card(s.purpose||"رش"),u=s.unit||"جم",fed=toFed(),tank=+farm.tank||16,L=h("ul");
+  c.append(h("p","","المادة الفعالة: "+(s.active_ingredient||"-")));
+  if(+s.dose_per_100l>0&&fed>0){const water=Math.min(1000,Math.max(100,+s.water_l_per_feddan||400))*fed,p=+s.dose_per_100l;
+    L.append(h("li","","الجرعة: "+amt(p,u)+" لكل 100 لتر ماء"),h("li","","في خزان "+tank+" لتر: "+amt(p*tank/100,u)),h("li","","الماء للمساحة: "+fmt(water)+" لتر = "+Math.ceil(water/tank)+" خزان"),h("li","","إجمالي المادة للمساحة: "+amt(p*water/100,u)))}
+  else if(+s.dose_per_feddan>0&&fed>0)L.append(h("li","","الجرعة: "+amt(+s.dose_per_feddan,u)+" للفدان"),h("li","","إجمالي المساحة: "+amt(+s.dose_per_feddan*fed,u)));
+  else L.append(h("li","","الكمية: راجع ملصق المنتج (محتاج مساحة أو معلومات أكتر)."));
+  if(s.timing)L.append(h("li","","التوقيت: "+s.timing));
+  if(s.phi_days!=null)L.append(h("li","","فترة الأمان قبل الحصاد: "+s.phi_days+" يوم"));
+  if(s.notes)L.append(h("li","",s.notes));
+  c.append(L);return c}
+function show(j){
+  const o=$("out");o.textContent="";o.style.display="block";
+  const s=card("التقييم");s.append(h("p","",j.summary||""));if(j.confidence)s.append(h("p","hint","درجة التأكد: "+j.confidence));o.append(s);
+  if((j.actions||[]).length){const c=card("اعمل إيه دلوقتي");c.append(list(j.actions));o.append(c)}
+  (j.spray||[]).forEach(x=>o.append(sprayCard(x)));
+  if((j.schedule||[]).length){const c=card("المواعيد الجاية");c.append(list(j.schedule));o.append(c)}
+  if((j.missing_info||[]).length){const c=card("معلومات ناقصة تزوّدني بيها");c.append(list(j.missing_info));o.append(c)}
+  const w=card("تنبيهات أمان","warn");w.append(list([...(j.warnings||[]),"الكميات استرشادية: اقرأ ملصق المنتج وراجع مهندس زراعي، واستخدم منتجات مسجلة في مصر، والبس كمامة وقفازات، وراعي فترة الأمان قبل الحصاد."]));o.append(w);
+  const b=h("button","ghost","انسخ الخطة");b.onclick=copyPlan;o.append(b)}
+async function copyPlan(){try{await navigator.clipboard.writeText($("out").innerText);hint("اتنسخت الخطة.");fetch(API_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({event:"copy",code:$("code").value.trim()})}).catch(()=>{})}catch(e){hint("ظلّل النص وانسخه يدوياً.",1)}}
+async function run(){
+  const q=$("q").value.trim();
+  if(!q&&!farm.crop&&!imgs.length){hint(ERR.need_info,1);return}
+  hint("بنحلّل... ممكن ياخد ثواني.");$("go").disabled=true;
+  try{
+    const r=await fetch(API_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({profile:farm,logs:logs.slice(-15),question:q,images:imgs,code:$("code").value.trim()})});
+    const j=await r.json().catch(()=>({}));
+    if(!r.ok){const er=new Error(j.error||"server");er.reason=j.reason;er.detail=j.detail;throw er}
+    show(j);hint(typeof j.remaining==="number"?"المتبقي لك: "+j.remaining+" تحليل.":"");
+  }catch(e){hint((ERR[e.message]||ERR.server)+(e.reason?" (رمز الخطأ: "+e.reason+")":"")+(e.detail&&ss.get("ak")?" - "+e.detail:""),1)}finally{$("go").disabled=false}
+}
+$("go").onclick=run;
+const DEFAULT = {
+  hero:{title:"رسّيني على زرعتي",lead:"ملف لكل أرض: المحصول والمساحة وطريقة الري وأداة الرش. صوّر زرعتك واسأل، وتاخد خطة بالمبيد المناسب والكمية على قد مساحتك وخزان الرش بتاعك."},
+  wa:WA_NUMBER,
+  pay:"الاشتراك عن طريق واتساب: بتدفع بفودافون كاش أو إنستاباي، وبتستلم كود تفعيل تكتبه في خانة الكود في أداة التحليل.",
+  plans:[
+    {name:"مجاني",price:"0",unit:"جنيه",features:["تحليلين تجربة","ملف الزرعة والسجل","تحليل الصور"],pop:false,paid:false},
+    {name:"شهري",price:"199",unit:"جنيه / شهر",features:["20 تحليل في الشهر","خطة رش بالكميات حسب الخزان","حفظ الملف والسجل على جهازك"],pop:true,paid:true},
+    {name:"سنوي",price:"1,790",unit:"جنيه / سنة",features:["كل مميزات الشهري","أرخص من الشهري بحوالي 25%"],pop:false,paid:true}
+  ],
+  refund:{title:"7 أيام من الاشتراك",body:"لو الخدمة مش مناسبة لك، تقدر تلغي وتاخد فلوسك خلال 7 أيام من الاشتراك، بشرط إن عدد التحليلات اللي استخدمتها أقل من 3.\nبنسجّل عدد التحليلات المستخدمة على الكود عشان نطبّق الشرط ده بعدل. وبنكتبلك الشروط دي على واتساب قبل الدفع، وبنتأكد من موافقتك عليها."},
+  about:"أنا [اسمك]، [صفتك]. عملت memai عشان الفلاح ياخد نصيحة واضحة لزرعته على قد مساحته وأدواته.\n[لينك التواصل]",
+  faq:[
+    {q:"هل ده بيغني عن المهندس الزراعي؟",a:"لا. ده مساعد بالذكاء الاصطناعي بيدّي إرشاد مبدئي وممكن يغلط، خصوصاً في تشخيص الصور. راجع مهندس زراعي قبل أي رش أو قرار كبير، واقرأ ملصق المنتج دايماً."},
+    {q:"إزاي بيحسب الكميات؟",a:"بياخد المساحة وسعة خزان الرش وطريقة الري، ويحسب الجرعة لكل 100 لتر ماء وعدد الخزانات والكمية الكلية. الأرقام استرشادية ومحتاجة مطابقة مع الملصق."},
+    {q:"إزاي أصوّر صح؟",a:"صوّر الورقة أو الثمرة من قريب في ضوء النهار، وصورة للنبات كله. كل ما الصور أوضح، التشخيص أدق."},
+    {q:"إزاي أشترك؟",a:"اضغط اشترك، هتفتح لك رسالة واتساب. ادفع وابعت صورة التحويل، وهتستلم كود تفعيل تكتبه في خانة الكود."},
+    {q:"هل بياناتي وصوري محفوظة؟",a:"ملف الزرعة والسجل بيتحفظوا على جهازك أنت مش على سيرفر. والصور والنص بيتبعتوا لخدمة Gemini من Google لتحليلهم ومبنخزنهمش عندنا. التفاصيل في سياسة الخصوصية."}
+  ]
+};
+let C = DEFAULT;
+const h=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+function rich(el,t){el.textContent="";let ul=null;String(t||"").split("\n").forEach(l=>{l=l.trim();if(!l){ul=null;return}if(l.startsWith("- ")){if(!ul){ul=h("ul");el.append(ul)}ul.append(h("li","",l.slice(2)))}else{ul=null;el.append(h("p","",l))}})}
+function renderAll(){
+  $("waFloat").href="https://wa.me/"+C.wa+"?text="+encodeURIComponent("أهلاً، عندي استفسار عن موقع memai.");
+  $("hTitle").textContent=C.hero.title;$("hLead").textContent=C.hero.lead;$("pay").textContent=C.pay;
+  const box=$("plans");box.textContent="";
+  C.plans.forEach(p=>{
+    const d=h("div","plan"+(p.pop?" pop":""));d.setAttribute("data-tilt","");const t3=h("span","i3 "+(p.pop?"c2":"c1"));t3.append(ico("gem"));d.append(t3,h("h3","",p.name));
+    const pr=h("div","price",p.price+" ");pr.append(h("small","",p.unit));d.append(pr);
+    const ul=h("ul");(p.features||[]).forEach(f=>ul.append(h("li","",f)));d.append(ul);
+    const a=h("a","",p.paid?"اشترك عبر واتساب":"جرّب دلوقتي");
+    if(p.paid){a.href="https://wa.me/"+C.wa+"?text="+encodeURIComponent("أهلاً، عايز أشترك في الباقة ("+p.name+") في موقع memai. قرأت سياسة الاسترجاع وموافق عليها.");a.target="_blank";a.rel="noopener"}else a.href="#try";
+    d.append(a);box.append(d);
+  });
+  const rb=$("refundBox");rb.textContent="";rb.append(h("h3","",C.refund.title));const rd=h("div");rich(rd,C.refund.body);rb.append(rd);
+  rich($("aboutBox"),C.about);
+  const f=$("faq");f.textContent="";C.faq.forEach(q=>{const d=h("details");d.append(h("summary","",q.q),h("p","",q.a));f.append(d)});
+}
+renderAll();
+(async()=>{if(!API_URL)return;try{const r=await fetch(API_URL);if(r.ok){const j=await r.json();if(j&&Array.isArray(j.plans)){C={...DEFAULT,...j};renderAll()}}}catch(e){}})();
+
+// ---- لوحة الأدمن ----
+const ss={get:k=>{try{return sessionStorage.getItem(k)||""}catch(e){return ""}},set:(k,v)=>{try{sessionStorage.setItem(k,v)}catch(e){}},del:k=>{try{sessionStorage.removeItem(k)}catch(e){}}};
+async function api(body){const r=await fetch(API_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||"server");return j}
+function overlay(){const o0=$("adm");if(o0)o0.remove();const o=h("div");o.id="adm";const i=h("div","adm-in");o.append(i);document.body.append(o);return i}
+function closeAdm(){const o=$("adm");if(o)o.remove()}
+function fld(label,val,set,multi){const l=h("label","",label);const i=multi?h("textarea"):h("input");i.value=val==null?"":val;i.oninput=()=>set(i.value);l.append(i);return l}
+function chk(label,val,set){const l=h("label");const i=h("input");i.type="checkbox";i.checked=!!val;i.onchange=()=>set(i.checked);l.append(i,document.createTextNode(label));return l}
+function askPass(){
+  if(!API_URL){alert("اربط الـ Worker الأول: ضع رابطه في API_URL.");return}
+  const i=overlay();i.append(h("h3","","دخول الأدمن"));
+  const p=h("input");p.type="password";p.placeholder="الباسورد";p.autocomplete="current-password";
+  const m=h("p","hint"),b=h("button","","دخول"),x=h("button","ghost","إغلاق");
+  b.onclick=async()=>{try{await api({action:"verify",key:p.value});ss.set("ak",p.value);openAdm(p.value)}catch(e){m.className="hint err";m.textContent=e.message==="locked"?"محاولات كتير. جرّب بعد ساعة.":"الباسورد غلط."}};
+  x.onclick=closeAdm;i.append(p,m,b,x);p.focus();
+}
+function openAdm(key){
+  const E=JSON.parse(JSON.stringify(C));let rem=20,days="";
+  const i=overlay(),m=h("p","hint");
+  const draw=()=>{
+    i.textContent="";i.append(h("h3","","لوحة التحكم"));
+    i.append(fld("العنوان الرئيسي",E.hero.title,v=>E.hero.title=v,1),fld("الوصف تحت العنوان",E.hero.lead,v=>E.hero.lead=v,1),fld("رقم واتساب (دولي بدون +)",E.wa,v=>E.wa=v),fld("نص الدفع تحت الأسعار",E.pay,v=>E.pay=v,1));
+    i.append(h("h4","","الباقات"));
+    E.plans.forEach((p,n)=>{
+      const c=h("div","adm-card");
+      c.append(fld("الاسم",p.name,v=>p.name=v),fld("السعر",p.price,v=>p.price=v),fld("الوحدة (مثلاً جنيه / شهر)",p.unit,v=>p.unit=v),fld("المميزات (كل سطر ميزة)",(p.features||[]).join("\n"),v=>p.features=v.split("\n").map(t=>t.trim()).filter(Boolean),1),chk("باقة مميزة",p.pop,v=>p.pop=v),chk("مدفوعة (زر واتساب)",p.paid,v=>p.paid=v));
+      const d=h("button","ghost","احذف الباقة");d.onclick=()=>{E.plans.splice(n,1);draw()};c.append(d);i.append(c);
+    });
+    const ap=h("button","ghost","+ أضف باقة");ap.onclick=()=>{E.plans.push({name:"باقة جديدة",price:"0",unit:"جنيه",features:[],pop:false,paid:true});draw()};i.append(ap);
+    i.append(h("h4","","سياسة الاسترجاع"),fld("العنوان",E.refund.title,v=>E.refund.title=v),fld("النص (السطر اللي يبدأ بـ - يبقى نقطة)",E.refund.body,v=>E.refund.body=v,1));
+    i.append(h("h4","","مين ورا الموقع"),fld("النص",E.about,v=>E.about=v,1));
+    i.append(h("h4","","الأسئلة الشائعة"));
+    E.faq.forEach((f,n)=>{const c=h("div","adm-card");c.append(fld("السؤال",f.q,v=>f.q=v),fld("الإجابة",f.a,v=>f.a=v,1));const d=h("button","ghost","احذف السؤال");d.onclick=()=>{E.faq.splice(n,1);draw()};c.append(d);i.append(c)});
+    const af=h("button","ghost","+ أضف سؤال");af.onclick=()=>{E.faq.push({q:"سؤال جديد",a:""});draw()};i.append(af);
+    const sv=h("button","","حفظ ونشر");
+    sv.onclick=async()=>{m.className="hint";m.textContent="بيتحفظ...";try{await api({action:"save_content",key,content:E});C=JSON.parse(JSON.stringify(E));renderAll();m.textContent="اتحفظ واتنشر."}catch(e){m.className="hint err";m.textContent="فشل الحفظ."}};
+    i.append(h("h4","","أكواد التفعيل"),fld("عدد الفيديوهات",rem,v=>rem=+v||0),fld("الصلاحية بالأيام (اختياري)",days,v=>days=v));
+    const out=h("p","hint"),cr=h("button","","أنشئ كود"),ls=h("button","ghost","عرض الأكواد"),lt=h("pre");
+    cr.onclick=async()=>{try{const j=await api({action:"create_code",key,remaining:rem,days:+days||0});out.className="hint";out.textContent="الكود: "+j.code}catch(e){out.className="hint err";out.textContent="فشل إنشاء الكود."}};
+    ls.onclick=async()=>{try{const j=await api({action:"list_codes",key});lt.textContent=j.codes.map(c=>c.code+" | متبقي "+c.remaining+" | استُخدم "+(c.used||0)+" | نُسخ "+(c.copied||0)).join("\n")||"مفيش أكواد."}catch(e){lt.textContent="فشل."}};
+    i.append(cr,ls,out,lt,h("hr"));
+    const cl=h("button","ghost","إغلاق"),lo=h("button","ghost","خروج");cl.onclick=closeAdm;lo.onclick=()=>{ss.del("ak");closeAdm()};
+    i.append(m,sv,cl,lo);
+  };
+  draw();
+}
+let taps=0,tt;
+$("me").onclick=async()=>{
+  taps++;clearTimeout(tt);tt=setTimeout(()=>taps=0,3000);
+  if(taps<10)return;taps=0;
+  const k=ss.get("ak");
+  if(k&&API_URL){try{await api({action:"verify",key:k});openAdm(k);return}catch(e){ss.del("ak")}}
+  askPass();
+};
+
+// تأثير 3D للوجو: بيميل مع الإصبع أو الماوس
+(function(){const el=$("l3d");if(!el)return;const t=el.querySelector(".l3");
+  const set=(x,y)=>{t.style.setProperty("--rx",(-y*14).toFixed(1)+"deg");t.style.setProperty("--ry",(x*18).toFixed(1)+"deg");t.style.setProperty("--mx",(50+x*50).toFixed(0)+"%");t.style.setProperty("--my",(50+y*50).toFixed(0)+"%")};
+  el.addEventListener("pointermove",e=>{const r=el.getBoundingClientRect();el.classList.add("on");set(((e.clientX-r.left)/r.width-.5)*2,((e.clientY-r.top)/r.height-.5)*2)});
+  ["pointerleave","pointercancel","pointerup"].forEach(v=>el.addEventListener(v,()=>{el.classList.remove("on");set(0,0)}));
+})();
+
+function ico(id){const n="http://www.w3.org/2000/svg",s=document.createElementNS(n,"svg"),u=document.createElementNS(n,"use");s.setAttribute("class","ic");s.setAttribute("aria-hidden","true");u.setAttribute("href","#ic-"+id);s.append(u);return s}
+const TICO={facebook:"play",tiktok:"note",instagram:"camera",shorts:"bolt"};
+// ميل 3D لكل الكروت: بيتحرك مع الإصبع أو الماوس ويرجع لمكانه
+(function(){if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;let cur=null;
+  const reset=()=>{if(cur){cur.style.transform="";cur=null}};
+  const go=e=>{const t=e.target.closest&&e.target.closest("[data-tilt]");if(cur&&cur!==t)reset();if(!t)return;const r=t.getBoundingClientRect(),x=((e.clientX-r.left)/r.width-.5)*2,y=((e.clientY-r.top)/r.height-.5)*2;t.style.transform="perspective(700px) rotateX("+(-y*7).toFixed(1)+"deg) rotateY("+(x*9).toFixed(1)+"deg) scale(1.01)";cur=t};
+  document.addEventListener("pointerdown",go);document.addEventListener("pointermove",go);
+  ["pointerup","pointercancel"].forEach(v=>document.addEventListener(v,reset));
+  document.addEventListener("pointerleave",reset);
+})();
+
+loadFarm();drawLogs();
+</script>
+</body>
+</html>
